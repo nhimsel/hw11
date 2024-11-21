@@ -11,5 +11,11 @@ public class Main
 
         Warrior p4 = new Warrior("Slugga");
         p4.display();
+
+        Mage p5 = new Mage("Merlock");
+        p5.display();
+
+        FightClub arena = new FightClub(p4,p5);
+        arena.Fight();
     }
 }

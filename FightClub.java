@@ -1,3 +1,6 @@
+
+import java.util.concurrent.TimeUnit;
+
 public class FightClub
 {
     protected Player p1;
@@ -16,6 +19,7 @@ public class FightClub
     {
         Player curAttacker;
         Player curDefender;
+        //randomly determine who attacks first
         if (this.d20.roll()>10)
         {
             curAttacker = this.p1; 
@@ -85,6 +89,14 @@ public class FightClub
 
             //add a blank line to make clear the end of a turn
             System.out.println("");
+
+            //add a pause to make it readable
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) 
+            {
+                e.printStackTrace();
+            }
         }
     }
 }
